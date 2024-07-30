@@ -31,11 +31,15 @@ section {
 
 .header-links {
   display: flex;
-  gap: 8px;
+  gap: 14px;
 }
 
 .header-links li {
   list-style-type: none;
+}
+
+.header-links li a {
+  font-size: 16px;
 }
 
 .header-links {
@@ -49,13 +53,14 @@ section {
   display: flex;
   background-color: #1f2937;
   justify-content: center;
-  padding: 30px;
+  padding: 20px;
+  padding-bottom: 80px;
   gap: 15px;
 }
 
 .main-text {
   flex: 0 1 auto;
-  width: 30%;
+  width: 35%;
 }
 
 .main-text h1 {
@@ -74,4 +79,46 @@ section {
 
 .main-img {
   width: 40%;
+}
+
+.main-text button {
+  border-radius: 7px;
+  background-color: #3882F6;
+  color: #E5E7EB;
+  border: 0;
+}
+
+/* Styling the Info Section */
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F5F5F5;
+  gap: 30px;
+  padding: 20px;
+}
+
+.info h1 {
+  margin: 0px;
+  font-size: 30px;
+  font-weight: 900;
+  color: #1F2937;
+}
+
+.info-card img {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.info-card {
+  width: 20%;
+}
+
+.info-cards {
+  display: flex;
+  margin: 0px;
+  gap: 10px;
+  justify-content: center;
 }
