@@ -184,3 +184,18 @@ section {
   font-weight: bold;
   color: white;
 }
+
+/* Styling Footer */
+.footer {
+  background-color: #1F2937;
+  color: white;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.footer p {
+  margin: 0;
+}
