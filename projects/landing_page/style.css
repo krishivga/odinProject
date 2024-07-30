@@ -122,3 +122,27 @@ section {
   gap: 10px;
   justify-content: center;
 }
+
+/* Styling the quotes section */
+.quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #E5E7EB;
+  padding: 70px 0;
+  gap: 20px;
+}
+
+.quote-text {
+  width: 45%;
+  font-size: 30px;
+  color: #1F2937;
+  font-style: italic;
+  margin: 0;
+}
+
+.quote-credit {
+  font-weight: 1000;
+  margin: 0;
+}
