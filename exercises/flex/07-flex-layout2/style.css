@@ -1,0 +1,101 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  max-height: 100vh;
+}
+
+.header {
+  height: 72px;
+  background: darkmagenta;
+  color: white;
+}
+
+.footer {
+  height: 72px;
+  background: #eee;
+  color: darkmagenta;
+}
+
+.sidebar {
+  width: 300px;
+  background: royalblue;
+  box-sizing: border-box;
+}
+
+.card {
+  border: 1px solid #eee;
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, .06);
+  border-radius: 4px;
+}
+
+/* Solution */
+/* First, we enable flex for the main layout and style it */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  width: 100vw;
+}
+
+/* First, let's style the header */
+.header {
+  font-size: 32px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  padding-left: 25px;
+}
+
+/* Next, we do the body */
+.content {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+/* sidebar */
+.sidebar {
+  flex-shrink: 0.3;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+li {
+  list-style-type: none;
+  font-weight: 500;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  padding-left: 5px;
+  gap: 10px;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  margin: 20px 0px;
+  padding: 5px;
+  width: 300px;
+  flex: 0 0 auto;
+}
+
+/* Finally, the footer */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
