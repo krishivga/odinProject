@@ -5,6 +5,7 @@ body {
   flex-direction: column;
   margin: 0px;
   padding: 0px;
+  font-family: Roboto, sans-serif;
 }
 
 section {
@@ -26,6 +27,8 @@ section {
   height: 35px;
 }
 
+/* Formatting the links */
+
 .header-links {
   display: flex;
   gap: 8px;
@@ -39,4 +42,36 @@ section {
   font-size: 18px;
   color: #E5E7EB;
   text-decoration: none;
+}
+
+/* Now for the main section */
+.main {
+  display: flex;
+  background-color: #1f2937;
+  justify-content: center;
+  padding: 30px;
+  gap: 15px;
+}
+
+.main-text {
+  flex: 0 1 auto;
+  width: 30%;
+}
+
+.main-text h1 {
+  font-size: 36px;
+  font-weight: 900;
+  color: #F9FAF8;
+  margin: 0px;
+}
+
+.main-text p {
+  margin: 0px;
+  margin-bottom: 10px;
+  color: #E5E7EB;
+  font-size: 14px;
+}
+
+.main-img {
+  width: 40%;
 }
