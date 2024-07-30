@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  font-family: Roboto, sans-serif;
+}
+
+img {
+  width: 600px;
+}
+
+button {
+  font-family: Roboto, sans-serif;
+  border: none;
+  border-radius: 8px;
+  background: #eee;
+}
+
+input {
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 8px 24px;
+  width: 400px;
+}
+
+/* Solution */
+/* We have three big sections: header, content and footer.
+We use flexbox to arrange them in a column.*/
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header,
+.content,
+.footer {
+  display: flex;
+}
+
+/* Now, we organise the header. */
+.header {
+  justify-content: space-between;
+  padding: 10px;
+  padding-top: 0px;
+}
+
+.left-links,
+.right-links {
+  display: flex;
+  gap: 15px;
+  padding: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: gray;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* Now, the body */
+.content {
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttons {
+  padding-top: 15px;
+}
+
+/* Finally, the footer */
+.footer {
+  justify-content: space-between;
+  padding: 5px 20px;
+  background-color: #eeeeee;
+}
