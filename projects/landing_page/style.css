@@ -1,7 +1,14 @@
+/* First, we make all the blocks fit properly and align them with flexbox*/
 body {
   width: 100vw;
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
 }
 
 section {
   width: 100vw;
 }
+
+/* Now, we start with the header */
