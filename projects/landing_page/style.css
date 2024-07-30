@@ -12,3 +12,31 @@ section {
 }
 
 /* Now, we start with the header */
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #1f2937;
+  align-items: center;
+}
+
+/* This unironically took forever to get right */
+/* Credit to Ilama for the logo */
+.header-logo {
+  width: auto;
+  height: 35px;
+}
+
+.header-links {
+  display: flex;
+  gap: 8px;
+}
+
+.header-links li {
+  list-style-type: none;
+}
+
+.header-links {
+  font-size: 18px;
+  color: #E5E7EB;
+  text-decoration: none;
+}
