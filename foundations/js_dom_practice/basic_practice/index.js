@@ -36,3 +36,14 @@ div_pink.appendChild(paragraph_div);
 
 // Adding the div to the container
 container.appendChild(div_pink)
+
+// Creating a button to test out Event Listeners
+const onclick_button = document.createElement("button");
+onclick_button.setAttribute("style", "  background: white; border: solid 2px black; padding: .375em 1.125em; font-size: 1rem;");
+onclick_button.textContent = "Click me!";
+container.appendChild(onclick_button);
+
+// Creating an event listener to check when button is clicked.
+onclick_button.addEventListener("click", function() {
+    console.log("Button clicked!");
+})
