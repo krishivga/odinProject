@@ -1,32 +1,38 @@
 // Setting up DOM
 let elementClicked = false;
+let humanChoice = "";
 
 // Checking for user input
-function getHumanChoice(elementClicked){
+function getHumanChoice(){
     const choiceRock = document.querySelector(".button-rock");
     const choicePaper = document.querySelector(".button-paper");
     const choiceScissors = document.querySelector(".button-scissors");
-    elementClicked = false;
 
-    let rock = choiceRock.addEventListener("click", function (){
+    // Event listeners to get the user's choice
+    choiceRock.addEventListener("click", function (){
+        humanChoice = "r";
         elementClicked = true;
-        return "r"
+        playGame(); // Call playGame when a choice is made
     });
-    let paper = choicePaper.addEventListener("click", function (){
+
+    choicePaper.addEventListener("click", function (){
+        humanChoice = "p";
         elementClicked = true;
-        return "p"
+        playGame();
     });
-    let scissors = choiceScissors.addEventListener("click", function (){
+
+    choiceScissors.addEventListener("click", function (){
+        humanChoice = "s";
         elementClicked = true;
-        return "s"
+        playGame();
     });
 }
 
 // Generates a computer choice
 function getComputerChoice() {
-    array = new Array("r", "p", "s"); // Arrays allow us to choose items based on index values.
-    random_index = Math.floor(Math.random() * array.length) //Multiplying the random value (from 0 to 1) with the length and rounding it down gives us an adjusted index. 
-    return array[random_index]; // We then select a random value from that index.
+    const array = ["r", "p", "s"]; // Use const for array declaration
+    const randomIndex = Math.floor(Math.random() * array.length); // Use camelCase for variable names
+    return array[randomIndex];
 }
 
 // Displays computer choice based on option taken
@@ -43,27 +49,30 @@ function displayComputerChoice(computerChoice) {
 
 // Rock, Paper and Scissors game.
 function playRound(humanChoice, computerChoice) {
-    let resultDisplay = document.querySelector(".result-text");
-    if ((humanChoice == "r" && computerChoice == "s") || (humanChoice == "p" && computerChoice == "r") || (humanChoice == "s" && computerChoice == "p")) { // Organising all win conditions into one condition for readability
+    const resultDisplay = document.querySelector(".result-text");
+    let roundWin = (humanChoice == "r" && computerChoice == "s") || 
+    (humanChoice == "p" && computerChoice == "r") || 
+    (humanChoice == "s" && computerChoice == "p");
+    if (roundWin) {
         resultDisplay.textContent = "You win!";
-        resultDisplay.setAttribute("style", "color: #3cb371");
+        resultDisplay.style.color = "#3cb371";
     } else if (humanChoice === computerChoice) {
         resultDisplay.textContent = "Tie!";
-        resultDisplay.setAttribute("style", "color: #fada5e");
+        resultDisplay.style.color = "#fada5e";
     } else {
         resultDisplay.textContent = "You lose!";
-        resultDisplay.setAttribute("style", "color: #86011");
+        resultDisplay.style.color = "#860111";
     }
 }
 
-// Game resets every minute
-function playGame(playRound, elementClicked, displayComputerChoice) { 
+function playGame() { 
     if (elementClicked === true) {
-        displayComputerChoice
-        playRound
+        const computerChoice = getComputerChoice();
+        displayComputerChoice(computerChoice);
+        playRound(humanChoice, computerChoice);
+        elementClicked = false; // Reset for the next round
     }
 }
 
 // Implementing it
-let computerChoice = getComputerChoice()
-playGame(playRound(getHumanChoice(elementClicked), computerChoice), elementClicked, displayComputerChoice(computerChoice));
+getHumanChoice(); // Initialize event listeners
