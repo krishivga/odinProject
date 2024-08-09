@@ -100,4 +100,13 @@ body {
     height: 15vh;
     background-color: #134B70;
     border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-text {
+    font-size: 38px;
+    color: #EEEEEE;
+    user-select: none;
 }

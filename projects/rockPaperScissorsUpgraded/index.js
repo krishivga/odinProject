@@ -1,15 +1,25 @@
 // Setting up DOM
-const choiceRock = document.querySelector(".button-rock");
-const choicePaper = document.querySelector(".button-paper");
-const choiceScissors = document.querySelector(".button-scissors");
-const computerChoiceDisplay = document.querySelector("#choice-text");
+let elementClicked = false;
 
-// Checks if any of the buttons clicked
-function getHumanChoice(rockElem, paperElem, scissorsElem) {
-    let rock = rockElem.addEventListener("click", () => "r");
-    let paper = paperElem.addEventListener("click", () => "p");
-    let scissors = scissorsElem.addEventListener("click", () => "s");
-    return rock ?? paper ?? scissors; // Returns the variable which is defined. 
+// Checking for user input
+function getHumanChoice(elementClicked){
+    const choiceRock = document.querySelector(".button-rock");
+    const choicePaper = document.querySelector(".button-paper");
+    const choiceScissors = document.querySelector(".button-scissors");
+    elementClicked = false;
+
+    let rock = choiceRock.addEventListener("click", function (){
+        elementClicked = true;
+        return "r"
+    });
+    let paper = choicePaper.addEventListener("click", function (){
+        elementClicked = true;
+        return "p"
+    });
+    let scissors = choiceScissors.addEventListener("click", function (){
+        elementClicked = true;
+        return "s"
+    });
 }
 
 // Generates a computer choice
@@ -20,7 +30,8 @@ function getComputerChoice() {
 }
 
 // Displays computer choice based on option taken
-function displayComputerChoice(computerChoice, computerChoiceDisplay) {
+function displayComputerChoice(computerChoice) {
+    const computerChoiceDisplay = document.querySelector("#choice-text");
     if (computerChoice === "r") {
         computerChoiceDisplay.textContent = "Rock";
     } else if (computerChoice === "p") {
@@ -32,13 +43,27 @@ function displayComputerChoice(computerChoice, computerChoiceDisplay) {
 
 // Rock, Paper and Scissors game.
 function playRound(humanChoice, computerChoice) {
+    let resultDisplay = document.querySelector(".result-text");
     if ((humanChoice == "r" && computerChoice == "s") || (humanChoice == "p" && computerChoice == "r") || (humanChoice == "s" && computerChoice == "p")) { // Organising all win conditions into one condition for readability
-        console.log("You win!") 
+        resultDisplay.textContent = "You win!";
+        resultDisplay.setAttribute("style", "color: #3cb371");
     } else if (humanChoice === computerChoice) {
-        console.log("It's a tie!")
+        resultDisplay.textContent = "Tie!";
+        resultDisplay.setAttribute("style", "color: #fada5e");
     } else {
-        console.log("You lose!")
+        resultDisplay.textContent = "You lose!";
+        resultDisplay.setAttribute("style", "color: #86011");
     }
-    console.log(humanChoice, computerChoice) // Logging choices to see if it even works
 }
 
+// Game resets every minute
+function playGame(playRound, elementClicked, displayComputerChoice) { 
+    if (elementClicked === true) {
+        displayComputerChoice
+        playRound
+    }
+}
+
+// Implementing it
+let computerChoice = getComputerChoice()
+playGame(playRound(getHumanChoice(elementClicked), computerChoice), elementClicked, displayComputerChoice(computerChoice));
