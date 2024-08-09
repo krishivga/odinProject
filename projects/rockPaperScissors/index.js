@@ -41,7 +41,7 @@ function playGame(games) {
   let playerScore = 0;
   let computerScore = 0;
   let score = 0;
-  for (let i = 0; i < games; i++){
+  for (let i = 0; i < games + 1; i++){
     score = playRound(getHumanChoice(),getComputerChoice());
     if (score == true) {
       playerScore++;
