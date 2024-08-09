@@ -4,7 +4,7 @@ let sketchCell;
 // Reset button takes prompt and creates new grid based on that
 let reset_button = document.querySelector(".reset");
 
-createNewGrid()
+createNewGrid() // Creating first grid with default parameters
 
 reset_button.addEventListener("click", function () {
     // Prompt the user for a grid size
@@ -19,6 +19,11 @@ reset_button.addEventListener("click", function () {
 });
 
 function createNewGrid(gridSize = 16) {
+    // Removes all previous grid cells
+    while (sketchContainer.hasChildNodes()) {
+        sketchContainer.removeChild(sketchContainer.firstChild);
+    }
+    
     for (let divCount = 0; divCount < (gridSize * gridSize); divCount++) { // 16 x 16 = 256
         sketchCell = document.createElement("div"); // appendChild removes value from original location, need to make a new one for each iteration of loop
         sketchCell.setAttribute("class", "cell");

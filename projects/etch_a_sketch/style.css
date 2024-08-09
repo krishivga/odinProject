@@ -1,9 +1,3 @@
-.body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
 /* Organising the cells for the etch-a-sketch*/
 .container {
     margin: 0px;
@@ -22,4 +16,9 @@
     width: 61.5px;
     height: 61.5px;
     border: .1px solid black;
+}
+
+.reset {
+    z-index: 999;
+    position: absolute;
 }
