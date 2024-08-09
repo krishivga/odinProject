@@ -1,0 +1,18 @@
+.container {
+    margin: 0px;
+    padding: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 0px;
+}
+.cell {
+    margin: 0px;
+    padding: 0px;
+    width: 6.15vw;
+    height: 6vh;
+    border: .1px solid black;
+}
