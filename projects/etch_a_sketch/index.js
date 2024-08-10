@@ -23,12 +23,15 @@ function createNewGrid(gridSize = 16) {
     while (sketchContainer.hasChildNodes()) {
         sketchContainer.removeChild(sketchContainer.firstChild);
     }
-    
+
+    // Creating a set of cell, organized into a grid using CSS
     for (let divCount = 0; divCount < (gridSize * gridSize); divCount++) { // 16 x 16 = 256
         sketchCell = document.createElement("div"); // appendChild removes value from original location, need to make a new one for each iteration of loop
         sketchCell.setAttribute("class", "cell");
         sketchContainer.appendChild(sketchCell);
     }
+
+    // Mouseover detection to turn cell black
     let sketchCells = document.querySelectorAll(".cell"); // Array of all the cells
     sketchCells.forEach(function (cell) {
         cell.addEventListener("mouseenter", function () {
