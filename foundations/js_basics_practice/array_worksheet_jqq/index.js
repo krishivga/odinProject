@@ -28,3 +28,25 @@ const characters = [
         gender: 'male',
     },
 ];
+
+// MAP
+// Array of names
+const map_names = characters.map((character) => character.name)
+// console.log(map_names);
+
+// Array of heights
+const map_heights = characters.map((character) => character.height);
+//console.log(map_heights);
+
+// Array of just names and heights
+const map_heights_and_names = characters.map((character) => {
+    return {
+        name: character.name,
+        height: character.height,
+    }
+});
+//console.log(map_heights_and_names);
+
+// Array of just first names
+const map_first_names = characters.map((character) => (character.name).split(" ")[0]);
+// console.log(map_first_names);
