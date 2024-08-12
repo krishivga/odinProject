@@ -1,3 +1,5 @@
+// TODO: Create Reset functionality
+//
 // Creating a calculator
 // Basic Calculator Functions
 const addNumbers = function (first_number, second_number) {
@@ -20,7 +22,7 @@ const divideNumbers = function (first_number, second_number) {
 const processOperation = function (operation, first_number, second_number, display) {
     // Checking for incorrect inputs
     if (!("+-*/".includes(operation))) {
-        alert("Error")
+        display.textContent = "Error!";
         return;
     }
 
@@ -62,6 +64,28 @@ calculator_screen.appendChild(screen_display);
 const screen_text = document.createElement("span");
 screen_text.className = "screen-text"
 screen_display.appendChild(screen_text);
+
+// Buttons
+const buttons_upper = document.createElement("div");
+const buttons_body = document.createElement("div");
+buttons_upper.className = "buttons-upper";
+buttons_body.className = "buttons-body";
+calculator_buttons.appendChild(buttons_upper);
+calculator_buttons.appendChild(buttons_body);
+
+const reset_button = document.createElement("div"); 
+const delete_button = document.createElement("div");
+reset_button.className = "upper-button";
+delete_button.className = "upper-button";
+reset_button.id = "reset-button";
+delete_button.id = "delete-button";
+buttons_upper.appendChild(reset_button);
+buttons_upper.appendChild(delete_button);
+
+
+// Events listeners
+let reset_calculator = reset_button.addEventListener("click", () => true);
+let delete_calculator = delete_button.addEventListener("click", () => true);
 
 // Input and Output Management
 let operation = prompt("Enter the operation you want (+, -, * or /): ");

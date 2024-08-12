@@ -19,6 +19,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .calculator-container {
     display: flex;
     flex-direction: column;
@@ -38,6 +39,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* Aligning buttons */
+.calculator-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.buttons-upper {
+    display: flex;
+    justify-content: space-between;
 }
 
 /* Creating a calculator */
@@ -74,4 +87,25 @@ body {
     background-color: lightsalmon;
     width: 85%;
     height: 60%;
+    padding: 0px;
+}
+
+.buttons-upper {
+    background-color: lightyellow;
+    width: 100%;
+    height: 25%;
+}
+
+.buttons-body {
+    background-color: lightskyblue;
+    width: 100%;
+    height: 75%;
+}
+
+/* Upper buttons */
+.upper-button {
+    background-color: gray;
+    width: 25%;
+    height: 60%;
+    margin: 3%;
 }
