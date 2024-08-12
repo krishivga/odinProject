@@ -24,6 +24,7 @@ const processOperation = function (operation, first_number, second_number) {
         return;
     }
 
+    // Calculation breaks w strings
     first_number = Number(first_number);
     second_number = Number(second_number);
 
@@ -44,8 +45,18 @@ const processOperation = function (operation, first_number, second_number) {
 }
 
 // Input and Output Management
-let operation = prompt("Enter the operation you want (+, -, * or /): ");
-let first_number = prompt("Enter the first number: ");
-let second_number = prompt("Enter the second number: ");
+// let operation = prompt("Enter the operation you want (+, -, * or /): ");
+// let first_number = prompt("Enter the first number: ");
+// let second_number = prompt("Enter the second number: ");
 
-processOperation(operation, first_number, second_number);
+// processOperation(operation, first_number, second_number);
+
+// Dom Setup
+// For Main calculator
+const calculator_container = document.querySelector(".calculator-container");
+const calculator_screen = document.createElement("div");
+const calculator_buttons = document.createElement("div");
+calculator_screen.className = "calculator-screen";
+calculator_buttons.className = "calculator-buttons";
+calculator_container.appendChild(calculator_screen);
+calculator_container.appendChild(calculator_buttons);
