@@ -17,7 +17,7 @@ const divideNumbers = function (first_number, second_number) {
 };
 
 // Input and Output Functions
-const processOperation = function (operation, first_number, second_number) {
+const processOperation = function (operation, first_number, second_number, display) {
     // Checking for incorrect inputs
     if (!("+-*/".includes(operation))) {
         alert("Error")
@@ -30,29 +30,22 @@ const processOperation = function (operation, first_number, second_number) {
 
     switch(operation) {
         case "+":
-            alert(addNumbers(first_number, second_number));
+            display.textContent = addNumbers(first_number, second_number);
             break;
         case "-":
-            alert(subtractNumbers(first_number, second_number));
+            display.textContent = subtractNumbers(first_number, second_number);
             break;
         case "*":
-            alert(multiplyNumbers(first_number, second_number));
+            display.textContent = multiplyNumbers(first_number, second_number);
             break;
         case "/":
-            alert(divideNumbers(first_number, second_number));
+            display.textContent = divideNumbers(first_number, second_number);
             break;
     }
 }
 
-// Input and Output Management
-// let operation = prompt("Enter the operation you want (+, -, * or /): ");
-// let first_number = prompt("Enter the first number: ");
-// let second_number = prompt("Enter the second number: ");
-
-// processOperation(operation, first_number, second_number);
-
 // Dom Setup
-// For Main calculator
+// Setting up the two sections of calculator
 const calculator_container = document.querySelector(".calculator-container");
 const calculator_screen = document.createElement("div");
 const calculator_buttons = document.createElement("div");
@@ -60,3 +53,19 @@ calculator_screen.className = "calculator-screen";
 calculator_buttons.className = "calculator-buttons";
 calculator_container.appendChild(calculator_screen);
 calculator_container.appendChild(calculator_buttons);
+
+// Setting up the screen
+const screen_display = document.createElement("div");
+screen_display.className = "screen-display";
+calculator_screen.appendChild(screen_display);
+
+const screen_text = document.createElement("span");
+screen_text.className = "screen-text"
+screen_display.appendChild(screen_text);
+
+// Input and Output Management
+let operation = prompt("Enter the operation you want (+, -, * or /): ");
+let first_number = prompt("Enter the first number: ");
+let second_number = prompt("Enter the second number: ");
+
+processOperation(operation, first_number, second_number, screen_text);
