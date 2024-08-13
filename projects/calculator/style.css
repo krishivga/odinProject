@@ -79,7 +79,7 @@ body {
 .screen-text {
     text-align: center;
     color: white;
-    font-size: 35px;
+    font-size: 3.5rem;
 }
 
 /* Buttons */
@@ -108,4 +108,7 @@ body {
     width: 25%;
     height: 60%;
     margin: 3%;
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
 }

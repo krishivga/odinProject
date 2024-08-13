@@ -73,23 +73,35 @@ buttons_body.className = "buttons-body";
 calculator_buttons.appendChild(buttons_upper);
 calculator_buttons.appendChild(buttons_body);
 
-const reset_button = document.createElement("div"); 
-const delete_button = document.createElement("div");
+const reset_button = document.createElement("button"); 
+const delete_button = document.createElement("button");
 reset_button.className = "upper-button";
 delete_button.className = "upper-button";
 reset_button.id = "reset-button";
 delete_button.id = "delete-button";
+reset_button.textContent = "Reset";
+delete_button.textContent = "Delete";
 buttons_upper.appendChild(reset_button);
 buttons_upper.appendChild(delete_button);
 
 
 // Events listeners
-let reset_calculator = reset_button.addEventListener("click", () => true);
-let delete_calculator = delete_button.addEventListener("click", () => true);
+const change_display = function () {
+    reset_button.addEventListener("click", function() {
+        alert("Reset Complete!");
+    });
+    
+    delete_button.addEventListener("click", function() {
+        alert("Delete Complete!");
+    });
+}
 
 // Input and Output Management
 let operation = prompt("Enter the operation you want (+, -, * or /): ");
 let first_number = prompt("Enter the first number: ");
 let second_number = prompt("Enter the second number: ");
 
+change_display()
+
 processOperation(operation, first_number, second_number, screen_text);
+
