@@ -67,6 +67,7 @@ screen_text.className = "screen-text"
 screen_display.appendChild(screen_text);
 
 // Buttons
+// Upper Buttons
 const buttons_upper = document.createElement("div");
 const buttons_body = document.createElement("div");
 buttons_upper.className = "buttons-upper";
@@ -76,15 +77,36 @@ calculator_buttons.appendChild(buttons_body);
 
 const reset_button = document.createElement("button"); 
 const delete_button = document.createElement("button");
+const add_button = document.createElement("button");
+const subtract_button = document.createElement("button");
+const multiply_button = document.createElement("button");
+const divide_button = document.createElement("button");
 reset_button.className = "upper-button";
 delete_button.className = "upper-button";
+add_button.className = "upper-button";
+subtract_button.className = "upper-button";
+multiply_button.className = "upper-button";
+divide_button.className = "upper-button";
 reset_button.id = "reset-button";
 delete_button.id = "delete-button";
+add_button.id = "add-button";
+subtract_button.id = "subtract-button";
+multiply_button.id = "multiply-button";
+divide_button.id = "divide-button";
 reset_button.textContent = "Reset";
 delete_button.textContent = "Delete";
+add_button.textContent = "Add";
+subtract_button.textContent = "Subtract";
+multiply_button.textContent = "Multiply";
+divide_button.textContent = "Divide";
 buttons_upper.appendChild(reset_button);
 buttons_upper.appendChild(delete_button);
+buttons_upper.appendChild(add_button);
+buttons_upper.appendChild(subtract_button);
+buttons_upper.appendChild(multiply_button);
+buttons_upper.appendChild(divide_button);
 
+// Buttons Body
 const key_0 = document.createElement("button");
 const key_1 = document.createElement("button");
 const key_2 = document.createElement("button");
@@ -127,6 +149,7 @@ buttons_body.appendChild(key_8);
 buttons_body.appendChild(key_9);
 
 // Event listeners
+// Change calculator display
 const change_display = function () {
     reset_button.addEventListener("click", function() {
         alert("Reset Complete!");
@@ -137,12 +160,55 @@ const change_display = function () {
     });
 }
 
+// Take inputs from calculator_body
+const enter_number = function () {
+    key_0.addEventListener("click", function() {
+        alert("Number 0 pressed!");
+    })
+
+    key_1.addEventListener("click", function() {
+        alert("Number 1 pressed!");
+    })
+
+    key_2.addEventListener("click", function() {
+        alert("Number 2 pressed!");
+    })
+
+    key_3.addEventListener("click", function() {
+        alert("Number 3 pressed!");
+    })
+
+    key_4.addEventListener("click", function() {
+        alert("Number 4 pressed!");
+    })
+
+    key_5.addEventListener("click", function() {
+        alert("Number 5 pressed!");
+    })
+    
+    key_6.addEventListener("click", function() {
+        alert("Number 6 pressed!");
+    })
+
+    key_7.addEventListener("click", function() {
+        alert("Number 7 pressed!");
+    })
+
+    key_8.addEventListener("click", function() {
+        alert("Number 8 pressed!");
+    })
+
+    key_9.addEventListener("click", function() {
+        alert("Number 9 pressed!");
+    })
+}
 // Input and Output Management
 let operation = prompt("Enter the operation you want (+, -, * or /): ");
 let first_number = prompt("Enter the first number: ");
 let second_number = prompt("Enter the second number: ");
 
 change_display()
+enter_number()
 
 processOperation(operation, first_number, second_number, screen_text);
 
