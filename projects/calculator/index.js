@@ -1,5 +1,6 @@
 // TODO: Create Reset functionality
-//
+// TODO: Create Delete functionality
+// TODO: Add buttons for numbers and symbols
 // Creating a calculator
 // Basic Calculator Functions
 const addNumbers = function (first_number, second_number) {
@@ -84,8 +85,48 @@ delete_button.textContent = "Delete";
 buttons_upper.appendChild(reset_button);
 buttons_upper.appendChild(delete_button);
 
+const key_0 = document.createElement("button");
+const key_1 = document.createElement("button");
+const key_2 = document.createElement("button");
+const key_3 = document.createElement("button");
+const key_4 = document.createElement("button");
+const key_5 = document.createElement("button");
+const key_6 = document.createElement("button");
+const key_7 = document.createElement("button");
+const key_8 = document.createElement("button");
+const key_9 = document.createElement("button");
+key_0.className = "body-button";
+key_1.className = "body-button";
+key_2.className = "body-button";
+key_3.className = "body-button";
+key_4.className = "body-button";
+key_5.className = "body-button";
+key_6.className = "body-button";
+key_7.className = "body-button";
+key_8.className = "body-button";
+key_9.className = "body-button";
+key_0.textContent = "0";
+key_1.textContent = "1";
+key_2.textContent = "2";
+key_3.textContent = "3";
+key_4.textContent = "4";
+key_5.textContent = "5";
+key_6.textContent = "6";
+key_7.textContent = "7";
+key_8.textContent = "8";
+key_9.textContent = "9";
+buttons_body.appendChild(key_0);
+buttons_body.appendChild(key_1);
+buttons_body.appendChild(key_2);
+buttons_body.appendChild(key_3);
+buttons_body.appendChild(key_4);
+buttons_body.appendChild(key_5);
+buttons_body.appendChild(key_6);
+buttons_body.appendChild(key_7);
+buttons_body.appendChild(key_8);
+buttons_body.appendChild(key_9);
 
-// Events listeners
+// Event listeners
 const change_display = function () {
     reset_button.addEventListener("click", function() {
         alert("Reset Complete!");
