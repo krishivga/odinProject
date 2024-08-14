@@ -51,7 +51,9 @@ body {
 
 .buttons-upper {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 3%;
+    align-items: center;
 }
 
 .buttons-body {
@@ -70,14 +72,14 @@ body {
 }
 /* Screen */
 .calculator-screen {
-    background-color: lightcyan;
+    /* background-color: lightcyan; */
     width: 75%;
     height: 20%;
     padding: 3%;
 }
 
 .screen-display {
-    background-color: purple;
+    background-color: black;
     border-radius: 15px;
     width: 90%;
     height: 75%;
@@ -91,7 +93,7 @@ body {
 
 /* Buttons */
 .calculator-buttons {
-    background-color: lightsalmon;
+    /* background-color: lightsalmon; */
     width: 93%;
     height: 70%;
     padding: 0px;
@@ -104,7 +106,7 @@ body {
 }
 
 .buttons-body {
-    background-color: lightskyblue;
+    /* background-color: lightskyblue; */
     width: 70%;
     height: 80%;
     padding-bottom: 4%;
@@ -119,6 +121,7 @@ body {
     text-align: center;
     font-size: 1.5rem;
     color: white;
+    margin: 0px;
 }
 
 /* Lower Buttons */
