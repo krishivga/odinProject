@@ -69,11 +69,8 @@ screen_display.appendChild(screen_text);
 // Buttons
 // Upper Buttons
 const buttons_upper = document.createElement("div");
-const buttons_body = document.createElement("div");
 buttons_upper.className = "buttons-upper";
-buttons_body.className = "buttons-body";
 calculator_buttons.appendChild(buttons_upper);
-calculator_buttons.appendChild(buttons_body);
 
 const reset_button = document.createElement("button"); 
 const delete_button = document.createElement("button");
@@ -81,24 +78,28 @@ const add_button = document.createElement("button");
 const subtract_button = document.createElement("button");
 const multiply_button = document.createElement("button");
 const divide_button = document.createElement("button");
+
 reset_button.className = "upper-button";
 delete_button.className = "upper-button";
 add_button.className = "upper-button";
 subtract_button.className = "upper-button";
 multiply_button.className = "upper-button";
 divide_button.className = "upper-button";
+
 reset_button.id = "reset-button";
 delete_button.id = "delete-button";
 add_button.id = "add-button";
 subtract_button.id = "subtract-button";
 multiply_button.id = "multiply-button";
 divide_button.id = "divide-button";
-reset_button.textContent = "Reset";
-delete_button.textContent = "Delete";
-add_button.textContent = "Add";
-subtract_button.textContent = "Subtract";
-multiply_button.textContent = "Multiply";
-divide_button.textContent = "Divide";
+
+reset_button.textContent = "AC";
+delete_button.textContent = "⌫";
+add_button.textContent = "+";
+subtract_button.textContent = "-";
+multiply_button.textContent = "*";
+divide_button.textContent = "÷";
+
 buttons_upper.appendChild(reset_button);
 buttons_upper.appendChild(delete_button);
 buttons_upper.appendChild(add_button);
@@ -107,6 +108,10 @@ buttons_upper.appendChild(multiply_button);
 buttons_upper.appendChild(divide_button);
 
 // Buttons Body
+const buttons_body = document.createElement("div");
+buttons_body.className = "buttons-body";
+calculator_buttons.appendChild(buttons_body);
+
 const key_0 = document.createElement("button");
 const key_1 = document.createElement("button");
 const key_2 = document.createElement("button");
@@ -117,6 +122,7 @@ const key_6 = document.createElement("button");
 const key_7 = document.createElement("button");
 const key_8 = document.createElement("button");
 const key_9 = document.createElement("button");
+
 key_0.className = "body-button";
 key_1.className = "body-button";
 key_2.className = "body-button";
@@ -127,6 +133,7 @@ key_6.className = "body-button";
 key_7.className = "body-button";
 key_8.className = "body-button";
 key_9.className = "body-button";
+
 key_0.textContent = "0";
 key_1.textContent = "1";
 key_2.textContent = "2";
@@ -137,6 +144,7 @@ key_6.textContent = "6";
 key_7.textContent = "7";
 key_8.textContent = "8";
 key_9.textContent = "9";
+
 buttons_body.appendChild(key_0);
 buttons_body.appendChild(key_1);
 buttons_body.appendChild(key_2);
