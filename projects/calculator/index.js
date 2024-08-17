@@ -1,22 +1,151 @@
 // TODO: Create Reset functionality
 // TODO: Create Delete functionality
 // TODO: Add buttons for numbers and symbols
+// Making  Calculator
+// Event listeners
+const getOperation = function() {
+    add_button.addEventListener("click", function() {
+        processOperation("+");
+    })
+    
+    subtract_button.addEventListener("click", function() {
+        processOperation("-");
+    })
+
+    multiply_button.addEventListener("click", function() {
+        processOperation("*");
+    })
+
+    divide_button.addEventListener("click", function() {
+        processOperation("/");
+    })
+}
+
+// Take inputs from calculator_body
+const enter_number = function () {
+    key_0.addEventListener("click", function() {
+        if (firstClickDone === false) {
+            current_number = "0";
+            firstClickDone = true;
+        } else {
+            current_number = current_number + "0";
+        }
+        displayText(current_number);
+    })
+
+    key_1.addEventListener("click", function() {
+        if (firstClickDone === false) {
+            current_number = "1";
+            firstClickDone = true;
+        } else {
+            current_number = current_number + "1";
+        }
+        displayText(current_number);
+    })
+
+    key_2.addEventListener("click", function() {
+        if (firstClickDone === false) {
+            current_number = "2";
+            firstClickDone = true;
+        } else {
+            current_number = current_number + "2";
+        }
+        displayText(current_number);
+    })
+
+    key_3.addEventListener("click", function() {
+        if (firstClickDone === false) {
+            current_number = "3";
+            firstClickDone = true;
+        } else {
+            current_number = current_number + "3";
+        }
+        displayText(current_number);
+    })
+
+    key_4.addEventListener("click", function() {
+        alert("Number 4 pressed!");
+        current_number += "4";
+    })
+
+    key_5.addEventListener("click", function() {
+        alert("Number 5 pressed!");
+        current_number += "5";
+    })
+    
+    key_6.addEventListener("click", function() {
+        alert("Number 6 pressed!");
+        current_number += "6";
+    })
+
+    key_7.addEventListener("click", function() {
+        alert("Number 7 pressed!");
+        current_number += "7";
+    })
+
+    key_8.addEventListener("click", function() {
+        alert("Number 8 pressed!");
+        current_number += "8";
+    })
+
+    key_9.addEventListener("click", function() {
+        alert("Number 9 pressed!");
+        current_number += "9";
+    })
+
+    // Doing operations if this is the second number pressed
+}
+
 // Creating a calculator
-const addNumbers = function (first_number, second_number) {
-    return first_number + second_number;
+const addNumbers = function (first_number, previous_number) {
+    return first_number + previous_number;
 };
 
-const subtractNumbers = function (first_number, second_number) {
-    return first_number - second_number;
+const subtractNumbers = function (first_number, previous_number) {
+    return first_number - previous_number;
 };
 
-const multiplyNumbers = function (first_number, second_number) {
-    return first_number * second_number;
+const multiplyNumbers = function (first_number, previous_number) {
+    return first_number * previous_number;
 };
 
-const divideNumbers = function (first_number, second_number) {
-    return first_number/second_number;
+const divideNumbers = function (first_number, previous_number) {
+    return first_number/previous_number;
 };
+
+
+const setPreviousNumber = function (current_number) {
+    previous_number = Number(current_number);
+};
+
+// Input and Output Functions
+const processOperation = function (operation) {
+    // Checking for incorrect inputs
+    let firstNumberPressed = false;
+
+    switch(operation) {
+        case "+":
+            alert("stuff was added");
+            if (previous_number === null) { // Only setting to previous number if no previous number is current stored
+                setPreviousNumber(current_number)
+                clearDisplayText()
+            } else {
+                current_number = addNumbers(current_number, previous_number);
+                displayText(current_number);
+                previous_number = null;
+            }
+            break;
+        case "-":
+            displayText(subtractNumbers(current_number, previous_number));
+            break;
+        case "*":
+            displayText(multiplyNumbers(current_number, previous_number));
+            break;
+        case "/":
+            displayText(divideNumbers(current_number, previous_number));
+            break;
+    }
+}
 
 // Displaying anything onto the screen
 const displayText = function(content) {
@@ -24,35 +153,10 @@ const displayText = function(content) {
     screen_text.textContent = content;
 }
 
-// Input and Output Functions
-const processOperation = function (operation, first_number, second_number) {
-    // Checking for incorrect inputs
-    if (!("+-*/".includes(operation)) || operation === "") {
-        displayText("Error!");
-        return;
-    }
-
-    // Calculation breaks w strings
-    first_number = Number(first_number);
-    second_number = Number(second_number);
-
-    switch(operation) {
-        case "+":
-            displayText(addNumbers(first_number, second_number));
-            break;
-        case "-":
-            displayText(subtractNumbers(first_number, second_number));
-            break;
-        case "*":
-            displayText(multiplyNumbers(first_number, second_number));
-            break;
-        case "/":
-            displayText(divideNumbers(first_number, second_number));
-            break;
-    }
+const clearDisplayText = function() {
+    screen_text.textContent = "";
 }
 
-// Event listeners
 // Change calculator display
 const change_display = function () {
     reset_button.addEventListener("click", function() {
@@ -64,52 +168,10 @@ const change_display = function () {
     });
 }
 
-// Take inputs from calculator_body
-const enter_number = function () {
-    key_0.addEventListener("click", function() {
-        alert("Number 0 pressed!");
-    })
-
-    key_1.addEventListener("click", function() {
-        alert("Number 1 pressed!");
-    })
-
-    key_2.addEventListener("click", function() {
-        alert("Number 2 pressed!");
-    })
-
-    key_3.addEventListener("click", function() {
-        alert("Number 3 pressed!");
-    })
-
-    key_4.addEventListener("click", function() {
-        alert("Number 4 pressed!");
-    })
-
-    key_5.addEventListener("click", function() {
-        alert("Number 5 pressed!");
-    })
-    
-    key_6.addEventListener("click", function() {
-        alert("Number 6 pressed!");
-    })
-
-    key_7.addEventListener("click", function() {
-        alert("Number 7 pressed!");
-    })
-
-    key_8.addEventListener("click", function() {
-        alert("Number 8 pressed!");
-    })
-
-    key_9.addEventListener("click", function() {
-        alert("Number 9 pressed!");
-    })
-
-    // Doing operations if this is the second number pressed
-}
-// Necessary for logic
-let firstNumberPressed = false;
+// Global Variables
+let current_number;
+let previous_number = null;
+let firstClickDone = false;
 
 // Dom Setup
 // Setting up the two sections of calculator
@@ -221,11 +283,5 @@ buttons_body.appendChild(key_8);
 buttons_body.appendChild(key_9);
 
 // Input and Output Management
-let operation = prompt("Enter the operation you want (+, -, * or /): ");
-let first_number = prompt("Enter the first number: ");
-let second_number = prompt("Enter the second number: ");
-
-change_display()
 enter_number()
-
-processOperation(operation, first_number, second_number, screen_text);
+getOperation()
