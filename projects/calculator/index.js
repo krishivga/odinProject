@@ -155,6 +155,7 @@ const displayText = function(content) {
 
 const clearDisplayText = function() {
     screen_text.textContent = "";
+    current_number = "";
 }
 
 // Change calculator display
@@ -204,6 +205,7 @@ const add_button = document.createElement("button");
 const subtract_button = document.createElement("button");
 const multiply_button = document.createElement("button");
 const divide_button = document.createElement("button");
+const equals_button = document.createElement("button");
 
 reset_button.className = "upper-button";
 delete_button.className = "upper-button";
@@ -211,6 +213,8 @@ add_button.className = "upper-button";
 subtract_button.className = "upper-button";
 multiply_button.className = "upper-button";
 divide_button.className = "upper-button";
+equals_button.className = "upper-button";
+
 
 reset_button.id = "reset-button";
 delete_button.id = "delete-button";
@@ -218,6 +222,7 @@ add_button.id = "add-button";
 subtract_button.id = "subtract-button";
 multiply_button.id = "multiply-button";
 divide_button.id = "divide-button";
+equals_button.id = "equals-button";
 
 reset_button.textContent = "AC";
 delete_button.textContent = "⌫";
@@ -225,6 +230,7 @@ add_button.textContent = "+";
 subtract_button.textContent = "-";
 multiply_button.textContent = "*";
 divide_button.textContent = "÷";
+equals_button.textContent = "=";
 
 buttons_upper.appendChild(reset_button);
 buttons_upper.appendChild(delete_button);
@@ -232,6 +238,7 @@ buttons_upper.appendChild(add_button);
 buttons_upper.appendChild(subtract_button);
 buttons_upper.appendChild(multiply_button);
 buttons_upper.appendChild(divide_button);
+buttons_upper.appendChild(equals_button);
 
 // Buttons Body
 const buttons_body = document.createElement("div");
