@@ -22,75 +22,46 @@ const getOperation = function() {
 }
 
 // Take inputs from calculator_body
-const enter_number = function () {
+const getNumberPress = function () {
     key_0.addEventListener("click", function() {
-        if (firstClickDone === false) {
-            current_number = "0";
-            firstClickDone = true;
-        } else {
-            current_number = current_number + "0";
-        }
-        displayText(current_number);
+        alert("Number 0 pressed!");
     })
 
     key_1.addEventListener("click", function() {
-        if (firstClickDone === false) {
-            current_number = "1";
-            firstClickDone = true;
-        } else {
-            current_number = current_number + "1";
-        }
-        displayText(current_number);
+        alert("Number 1 pressed!");
     })
 
     key_2.addEventListener("click", function() {
-        if (firstClickDone === false) {
-            current_number = "2";
-            firstClickDone = true;
-        } else {
-            current_number = current_number + "2";
-        }
-        displayText(current_number);
+        alert("Number 2 pressed!");
+
     })
 
     key_3.addEventListener("click", function() {
-        if (firstClickDone === false) {
-            current_number = "3";
-            firstClickDone = true;
-        } else {
-            current_number = current_number + "3";
-        }
-        displayText(current_number);
+        alert("Number 3 pressed!");
     })
 
     key_4.addEventListener("click", function() {
         alert("Number 4 pressed!");
-        current_number += "4";
     })
 
     key_5.addEventListener("click", function() {
         alert("Number 5 pressed!");
-        current_number += "5";
     })
     
     key_6.addEventListener("click", function() {
         alert("Number 6 pressed!");
-        current_number += "6";
     })
 
     key_7.addEventListener("click", function() {
         alert("Number 7 pressed!");
-        current_number += "7";
     })
 
     key_8.addEventListener("click", function() {
         alert("Number 8 pressed!");
-        current_number += "8";
     })
 
     key_9.addEventListener("click", function() {
         alert("Number 9 pressed!");
-        current_number += "9";
     })
 
     // Doing operations if this is the second number pressed
@@ -121,31 +92,19 @@ const setPreviousNumber = function (current_number) {
 // Input and Output Functions
 const processOperation = function (operation) {
     // Checking for incorrect inputs
-    let firstNumberPressed = false;
 
     switch(operation) {
         case "+":
-            alert("stuff was added");
-            if (previous_number === null) { // Only setting to previous number if no previous number is current stored
-                setPreviousNumber(current_number)
-                clearDisplayText()
-            } else {
-                current_number = addNumbers(current_number, previous_number);
-                displayText(current_number);
-                previous_number = null;
-            }
             break;
         case "-":
-            displayText(subtractNumbers(current_number, previous_number));
             break;
         case "*":
-            displayText(multiplyNumbers(current_number, previous_number));
             break;
         case "/":
-            displayText(divideNumbers(current_number, previous_number));
             break;
     }
 }
+
 
 // Displaying anything onto the screen
 const displayText = function(content) {
@@ -155,7 +114,7 @@ const displayText = function(content) {
 
 const clearDisplayText = function() {
     screen_text.textContent = "";
-    current_number = "";
+    displayed_number = "";
 }
 
 // Change calculator display
@@ -171,6 +130,7 @@ const change_display = function () {
 
 // Global Variables
 let current_number;
+let displayed_number = "";
 let previous_number = null;
 let firstClickDone = false;
 
@@ -290,5 +250,5 @@ buttons_body.appendChild(key_8);
 buttons_body.appendChild(key_9);
 
 // Input and Output Management
-enter_number()
+getNumberPress()
 getOperation()
