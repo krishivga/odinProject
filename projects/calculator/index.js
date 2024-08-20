@@ -1,110 +1,122 @@
+// Odin Project-JS Basics: Calculator
 // TODO: Create Reset functionality
 // TODO: Create Delete functionality
-// TODO: Add buttons for numbers and symbols
-// Making  Calculator
-// Event listeners
-const getOperation = function() {
+// TODO: Add Math functionality
+
+// Input and Output
+// Getting operations
+const getOperationPress = function() {
     add_button.addEventListener("click", function() {
-        processOperation("+");
+        current_operator = "+";
+        previous_number = Number(current_number);
+        current_number = ""
+        clearDisplayText();
     })
     
     subtract_button.addEventListener("click", function() {
-        processOperation("-");
+        current_operator = "-";
+        previous_number = Number(current_number);
+        current_number = ""
+        clearDisplayText();
     })
 
     multiply_button.addEventListener("click", function() {
-        processOperation("*");
+        current_operator = "*";
+        previous_number = Number(current_number);
+        current_number = "";
+        clearDisplayText();
     })
 
     divide_button.addEventListener("click", function() {
-        processOperation("/");
+        current_operator = "/";
+        previous_number = Number(current_number);
+        current_number = "";
+        clearDisplayText();
     })
 }
 
 // Take inputs from calculator_body
 const getNumberPress = function () {
     key_0.addEventListener("click", function() {
-        alert("Number 0 pressed!");
+        current_number += "0";
+        displayed_number += "0";
+        displayText(current_number);
     })
 
     key_1.addEventListener("click", function() {
-        alert("Number 1 pressed!");
+        current_number += "1";
+        displayed_number += "1";
+        displayText(current_number);
     })
 
     key_2.addEventListener("click", function() {
-        alert("Number 2 pressed!");
-
+        current_number += "2";
+        displayed_number += "2";
+        displayText(current_number);
     })
 
     key_3.addEventListener("click", function() {
-        alert("Number 3 pressed!");
+        current_number += "3";
+        displayed_number += "3";
+        displayText(current_number);
     })
 
     key_4.addEventListener("click", function() {
-        alert("Number 4 pressed!");
+        current_number += "4";
+        displayed_number += "4";
+        displayText(current_number);
     })
 
     key_5.addEventListener("click", function() {
-        alert("Number 5 pressed!");
+        current_number += "5";
+        displayed_number += "5";
+        displayText(current_number);
+
     })
     
     key_6.addEventListener("click", function() {
-        alert("Number 6 pressed!");
+        current_number += "6";
+        displayed_number += "6";
+        displayText(current_number);
     })
 
     key_7.addEventListener("click", function() {
-        alert("Number 7 pressed!");
+        current_number += "7";
+        displayed_number += "7";
+        displayText(current_number);
     })
 
     key_8.addEventListener("click", function() {
-        alert("Number 8 pressed!");
+        current_number += "8";
+        displayed_number += "8";
+        displayText(current_number);
     })
 
     key_9.addEventListener("click", function() {
-        alert("Number 9 pressed!");
+        current_number += "9";
+        displayed_number += "9";
+        displayText(current_number);
     })
 
     // Doing operations if this is the second number pressed
 }
 
-// Creating a calculator
-const addNumbers = function (first_number, previous_number) {
-    return first_number + previous_number;
-};
+const getDisplayChange = function () {
+    reset_button.addEventListener("click", function() {
+        clearDisplayText()
+        current_number = "";
+        previous_number = null;
+    });
+    
+    delete_button.addEventListener("click", function() {
+    current_number = current_number.substring(0, current_number.length - 1);
+    displayText(current_number);
+    });
 
-const subtractNumbers = function (first_number, previous_number) {
-    return first_number - previous_number;
-};
-
-const multiplyNumbers = function (first_number, previous_number) {
-    return first_number * previous_number;
-};
-
-const divideNumbers = function (first_number, previous_number) {
-    return first_number/previous_number;
-};
-
-
-const setPreviousNumber = function (current_number) {
-    previous_number = Number(current_number);
-};
-
-// Input and Output Functions
-const processOperation = function (operation) {
-    // Checking for incorrect inputs
-
-    switch(operation) {
-        case "+":
-            break;
-        case "-":
-            break;
-        case "*":
-            break;
-        case "/":
-            break;
-    }
+    equals_button.addEventListener("click", function(){
+        setEqualsAnswer();
+    })
 }
-
 
 // Displaying anything onto the screen
 const displayText = function(content) {
@@ -112,27 +124,78 @@ const displayText = function(content) {
     screen_text.textContent = content;
 }
 
+// Removing all display text
 const clearDisplayText = function() {
     screen_text.textContent = "";
     displayed_number = "";
 }
 
-// Change calculator display
-const change_display = function () {
-    reset_button.addEventListener("click", function() {
-        alert("Reset Complete!");
-    });
-    
-    delete_button.addEventListener("click", function() {
-        alert("Delete Complete!");
-    });
+// Operator functions
+const addNumbers = function (first_number, previous_number) {
+    return previous_number + first_number;
+};
+
+const subtractNumbers = function (first_number, previous_number) {
+    return  previous_number - first_number;
+};
+
+const multiplyNumbers = function (first_number, previous_number) {
+    return previous_number * first_number;
+};
+
+const divideNumbers = function (first_number, previous_number) {
+    return previous_number/first_number;
+};
+
+// Putting it all together - getting the display to work
+const setEqualsAnswer = function () {
+    let answer;
+
+    if ((current_number === null) || (current_operator == null) || (previous_number === null)) { // Error check
+        displayText(null);
+    }
+
+    switch (current_operator) { // 
+        case "+":
+            answer = addNumbers(Number(current_number), Number(previous_number))
+            displayText(answer)
+            current_number = answer;
+            displayed_number = answer;
+            current_operator = null;
+            break;
+        case "-":
+            answer = subtractNumbers(Number(current_number), Number(previous_number));
+            displayText(answer);
+            displayed_number = answer;
+            current_number = answer;
+            current_operator = null;
+            break;
+        case "*":
+            answer = multiplyNumbers(Number(current_number), Number(previous_number));
+            displayText(answer)
+            current_number = answer;
+            displayed_number = answer;
+            current_operator = null;
+            break;
+        case "/":
+            answer = divideNumbers(Number(current_number), Number(previous_number));
+            displayText(answer)
+            displayed_number = answer;
+            current_number = answer;
+            current_operator = "";
+            break;
+    }
 }
 
 // Global Variables
-let current_number;
-let displayed_number = "";
+// Math
+let current_number = "";
 let previous_number = null;
+let current_operator = null;
+
+// Events checking and display
 let firstClickDone = false;
+let displayed_number = "";
 
 // Dom Setup
 // Setting up the two sections of calculator
@@ -251,4 +314,5 @@ buttons_body.appendChild(key_9);
 
 // Input and Output Management
 getNumberPress()
-getOperation()
+getOperationPress()
+getDisplayChange()
