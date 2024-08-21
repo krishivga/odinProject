@@ -25,7 +25,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 4%;
+    background-color: #dfd3c3;
+    gap: 2%;
 }
 
 /* Aligning Screen */
@@ -100,7 +101,6 @@ body {
 }
 
 .buttons-upper {
-    background-color: lightyellow;
     width: 100%;
     height: 20%;
 }
@@ -114,7 +114,7 @@ body {
 
 /* Upper buttons */
 .upper-button {
-    background-color: gray;
+    background-color: #596e79;
     width: 10%;
     height: 60%;
     margin: 3%;
@@ -126,7 +126,7 @@ body {
 
 /* Lower Buttons */
 .body-button {
-    background-color: gray;
+    background-color: #596e79;
     width: 20%;
     height: 20%;
     margin: 3%;

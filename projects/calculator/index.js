@@ -290,7 +290,6 @@ key_7.className = "body-button";
 key_8.className = "body-button";
 key_9.className = "body-button";
 
-key_0.textContent = "0";
 key_1.textContent = "1";
 key_2.textContent = "2";
 key_3.textContent = "3";
@@ -300,8 +299,9 @@ key_6.textContent = "6";
 key_7.textContent = "7";
 key_8.textContent = "8";
 key_9.textContent = "9";
+key_0.textContent = "0";
 
-buttons_body.appendChild(key_0);
+
 buttons_body.appendChild(key_1);
 buttons_body.appendChild(key_2);
 buttons_body.appendChild(key_3);
@@ -311,6 +311,8 @@ buttons_body.appendChild(key_6);
 buttons_body.appendChild(key_7);
 buttons_body.appendChild(key_8);
 buttons_body.appendChild(key_9);
+buttons_body.appendChild(key_0);
+
 
 // Input and Output Management
 getNumberPress()
