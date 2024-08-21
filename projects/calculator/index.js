@@ -1,7 +1,4 @@
 // Odin Project-JS Basics: Calculator
-// TODO: Style the calc
-// TODO: Add decimals
-
 // Input and Output
 // Getting operations
 const getOperationPress = function() {
@@ -10,6 +7,7 @@ const getOperationPress = function() {
         previous_number = Number(current_number);
         current_number = ""
         clearDisplayText();
+        showCalculatorWorking();
     })
     
     subtract_button.addEventListener("click", function() {
@@ -17,6 +15,7 @@ const getOperationPress = function() {
         previous_number = Number(current_number);
         current_number = ""
         clearDisplayText();
+        showCalculatorWorking();
     })
 
     multiply_button.addEventListener("click", function() {
@@ -24,6 +23,7 @@ const getOperationPress = function() {
         previous_number = Number(current_number);
         current_number = "";
         clearDisplayText();
+        showCalculatorWorking();
     })
 
     divide_button.addEventListener("click", function() {
@@ -31,6 +31,7 @@ const getOperationPress = function() {
         previous_number = Number(current_number);
         current_number = "";
         clearDisplayText();
+        showCalculatorWorking();
     })
 }
 
@@ -98,9 +99,13 @@ const getNumberPress = function () {
     })
 
     key_decimal.addEventListener("click", function() {
-        current_number += ".";
-        displayed_number += ".";
-        displayText(current_number);
+        if (!current_number.includes(".")) {
+            current_number += ".";
+            displayed_number += ".";
+            displayText(current_number);
+        } else {
+            displayText("Error!")
+        }
     })
     // Doing operations if this is the second number pressed
 }
@@ -132,6 +137,16 @@ const displayText = function(content) {
 const clearDisplayText = function() {
     screen_text.textContent = "";
     displayed_number = "";
+}
+
+const showCalculatorWorking = function() {
+    if (!(previous_number === null || current_operator === null)) {
+    screen_working.textContent = `${previous_number + " " + current_operator}`
+    }
+}
+
+const clearCalculatorWorking = function() {
+    screen_working.textContent = "";
 }
 
 // Operator functions
@@ -166,6 +181,7 @@ const setEqualsAnswer = function () {
             current_number = answer;
             displayed_number = answer;
             current_operator = null;
+            clearCalculatorWorking()
             break;
         case "-":
             answer = subtractNumbers(Number(current_number), Number(previous_number));
@@ -173,6 +189,7 @@ const setEqualsAnswer = function () {
             displayed_number = answer;
             current_number = answer;
             current_operator = null;
+            clearCalculatorWorking()
             break;
         case "*":
             answer = multiplyNumbers(Number(current_number), Number(previous_number));
@@ -180,13 +197,15 @@ const setEqualsAnswer = function () {
             current_number = answer;
             displayed_number = answer;
             current_operator = null;
+            clearCalculatorWorking()
             break;
         case "/":
             answer = divideNumbers(Number(current_number), Number(previous_number));
             displayText(answer)
             displayed_number = answer;
             current_number = answer;
-            current_operator = "";
+            current_operator = null;
+            clearCalculatorWorking()
             break;
     }
 }
@@ -212,8 +231,11 @@ calculator_container.appendChild(calculator_screen);
 calculator_container.appendChild(calculator_buttons);
 
 // Setting up the screen
+const screen_working = document.createElement("span");
 const screen_text = document.createElement("span");
+screen_working.className = "screen-working"
 screen_text.className = "screen-text"
+calculator_screen.appendChild(screen_working);
 calculator_screen.appendChild(screen_text);
 
 // Buttons
@@ -262,17 +284,17 @@ const key_8 = document.createElement("button");
 const key_9 = document.createElement("button");
 const key_decimal = document.createElement("button");
 
-key_0.className = "body-button";
-key_1.className = "body-button";
-key_2.className = "body-button";
-key_3.className = "body-button";
-key_4.className = "body-button";
-key_5.className = "body-button";
-key_6.className = "body-button";
-key_7.className = "body-button";
-key_8.className = "body-button";
-key_9.className = "body-button";
-key_decimal.className = "body-button";
+key_0.className = "keys-button";
+key_1.className = "keys-button";
+key_2.className = "keys-button";
+key_3.className = "keys-button";
+key_4.className = "keys-button";
+key_5.className = "keys-button";
+key_6.className = "keys-button";
+key_7.className = "keys-button";
+key_8.className = "keys-button";
+key_9.className = "keys-button";
+key_decimal.className = "keys-button";
 
 key_1.textContent = "1";
 key_2.textContent = "2";
