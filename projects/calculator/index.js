@@ -97,6 +97,11 @@ const getNumberPress = function () {
         displayText(current_number);
     })
 
+    key_decimal.addEventListener("click", function() {
+        current_number += ".";
+        displayed_number += ".";
+        displayText(current_number);
+    })
     // Doing operations if this is the second number pressed
 }
 
