@@ -1,7 +1,6 @@
 // Odin Project-JS Basics: Calculator
-// TODO: Create Reset functionality
-// TODO: Create Delete functionality
-// TODO: Add Math functionality
+// TODO: Style the calc
+// TODO: Add decimals
 
 // Input and Output
 // Getting operations
@@ -208,13 +207,9 @@ calculator_container.appendChild(calculator_screen);
 calculator_container.appendChild(calculator_buttons);
 
 // Setting up the screen
-const screen_display = document.createElement("div");
-screen_display.className = "screen-display";
-calculator_screen.appendChild(screen_display);
-
 const screen_text = document.createElement("span");
 screen_text.className = "screen-text"
-screen_display.appendChild(screen_text);
+calculator_screen.appendChild(screen_text);
 
 // Buttons
 // Upper Buttons
@@ -224,50 +219,32 @@ calculator_buttons.appendChild(buttons_upper);
 
 const reset_button = document.createElement("button"); 
 const delete_button = document.createElement("button");
-const add_button = document.createElement("button");
-const subtract_button = document.createElement("button");
-const multiply_button = document.createElement("button");
-const divide_button = document.createElement("button");
-const equals_button = document.createElement("button");
 
 reset_button.className = "upper-button";
 delete_button.className = "upper-button";
-add_button.className = "upper-button";
-subtract_button.className = "upper-button";
-multiply_button.className = "upper-button";
-divide_button.className = "upper-button";
-equals_button.className = "upper-button";
-
 
 reset_button.id = "reset-button";
 delete_button.id = "delete-button";
-add_button.id = "add-button";
-subtract_button.id = "subtract-button";
-multiply_button.id = "multiply-button";
-divide_button.id = "divide-button";
-equals_button.id = "equals-button";
 
 reset_button.textContent = "AC";
 delete_button.textContent = "⌫";
-add_button.textContent = "+";
-subtract_button.textContent = "-";
-multiply_button.textContent = "*";
-divide_button.textContent = "÷";
-equals_button.textContent = "=";
 
 buttons_upper.appendChild(reset_button);
 buttons_upper.appendChild(delete_button);
-buttons_upper.appendChild(add_button);
-buttons_upper.appendChild(subtract_button);
-buttons_upper.appendChild(multiply_button);
-buttons_upper.appendChild(divide_button);
-buttons_upper.appendChild(equals_button);
 
 // Buttons Body
 const buttons_body = document.createElement("div");
 buttons_body.className = "buttons-body";
 calculator_buttons.appendChild(buttons_body);
 
+const buttons_keys = document.createElement("div");
+const buttons_operators = document.createElement("div");
+buttons_keys.className = "buttons-keys";
+buttons_operators.className = "buttons-operators";
+buttons_body.appendChild(buttons_keys);
+buttons_body.appendChild(buttons_operators);
+
+// Keys
 const key_0 = document.createElement("button");
 const key_1 = document.createElement("button");
 const key_2 = document.createElement("button");
@@ -278,6 +255,7 @@ const key_6 = document.createElement("button");
 const key_7 = document.createElement("button");
 const key_8 = document.createElement("button");
 const key_9 = document.createElement("button");
+const key_decimal = document.createElement("button");
 
 key_0.className = "body-button";
 key_1.className = "body-button";
@@ -289,6 +267,7 @@ key_6.className = "body-button";
 key_7.className = "body-button";
 key_8.className = "body-button";
 key_9.className = "body-button";
+key_decimal.className = "body-button";
 
 key_1.textContent = "1";
 key_2.textContent = "2";
@@ -300,19 +279,50 @@ key_7.textContent = "7";
 key_8.textContent = "8";
 key_9.textContent = "9";
 key_0.textContent = "0";
+key_decimal.textContent = ".";
 
+buttons_keys.appendChild(key_1);
+buttons_keys.appendChild(key_2);
+buttons_keys.appendChild(key_3);
+buttons_keys.appendChild(key_4);
+buttons_keys.appendChild(key_5);
+buttons_keys.appendChild(key_6);
+buttons_keys.appendChild(key_7);
+buttons_keys.appendChild(key_8);
+buttons_keys.appendChild(key_9);
+buttons_keys.appendChild(key_0);
+buttons_keys.appendChild(key_decimal);
 
-buttons_body.appendChild(key_1);
-buttons_body.appendChild(key_2);
-buttons_body.appendChild(key_3);
-buttons_body.appendChild(key_4);
-buttons_body.appendChild(key_5);
-buttons_body.appendChild(key_6);
-buttons_body.appendChild(key_7);
-buttons_body.appendChild(key_8);
-buttons_body.appendChild(key_9);
-buttons_body.appendChild(key_0);
+// Operators
+const add_button = document.createElement("button");
+const subtract_button = document.createElement("button");
+const multiply_button = document.createElement("button");
+const divide_button = document.createElement("button");
+const equals_button = document.createElement("button");
 
+add_button.className = "operator-button";
+subtract_button.className = "operator-button";
+multiply_button.className = "operator-button";
+divide_button.className = "operator-button";
+equals_button.className = "operator-button";
+
+add_button.id = "add-button";
+subtract_button.id = "subtract-button";
+multiply_button.id = "multiply-button";
+divide_button.id = "divide-button";
+equals_button.id = "equals-button";
+
+add_button.textContent = "+";
+subtract_button.textContent = "-";
+multiply_button.textContent = "*";
+divide_button.textContent = "÷";
+equals_button.textContent = "=";
+
+buttons_operators.appendChild(add_button);
+buttons_operators.appendChild(subtract_button);
+buttons_operators.appendChild(multiply_button);
+buttons_operators.appendChild(divide_button);
+buttons_operators.appendChild(equals_button);
 
 // Input and Output Management
 getNumberPress()
