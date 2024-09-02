@@ -82,8 +82,16 @@ body {
 
 /* Creating a calculator */
 .calculator-container {
+<<<<<<< HEAD
     width: 420px;
     height: 530px;
+||||||| 69b1eab
+    width: 40%;
+    height: 70%;
+=======
+    width: 30%;
+    height: 70%;
+>>>>>>> a363047a0faf3ad3a0dabe68c06f6510da88c2b7
 }
 
 /* Screen */
