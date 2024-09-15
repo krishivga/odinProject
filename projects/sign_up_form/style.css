@@ -44,6 +44,22 @@ table {
 }
 
 /* This is where the actual document starts */
+/* Setting up variables */
+:root {
+    --main-bg: #001524;
+    --alt-bg: #8B939C;
+    --highlight: #EABDA8;
+    --alt-highlight: #273B09;
+    --contrast: #92140C;
+    font-size: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Also, fixing some stuff from the overrides */
+
+em {
+    font-style: italic; /* Default behavior, but might be overridden */
+  }
 
 /* Creating the basic outline of the document and organising it using flexbox */
  body {
@@ -51,7 +67,7 @@ table {
  }
 
 .main-section {
-    background-color: #001524;
+    background-color: var(--main-bg);
     width: 65vw;
     height: 100vh;
 }
@@ -72,22 +88,40 @@ table {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 15px;
 }
 
 .hero-container {
     width: 90%;
-    height: 35%;
-    background-color: #EABDA8;
+    height: 25%;
+    background-color: var(--main-bg);
 }
 
 .form-container {
     width: 90%;
-    height: 25%;
-    background-color: #087F8C;
+    height: 45%;
+    background-color: var(--alt-bg);
 }
 
 .submit-container {
     width: 90%;
-    height: 25%;
-    background-color: #765442;
+    height: 20%;
+    background-color: var(--alt-highlight);
+}
+
+/* For hero-container */
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.hero-text {
+    font-size: 3rem;
+    color: var(--highlight)
+}
+
+.hero-cta {
+    font-size: 4rem;
+    color: var(--highlight);
 }
