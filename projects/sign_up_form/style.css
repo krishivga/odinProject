@@ -44,15 +44,23 @@ table {
 }
 
 /* This is where the actual document starts */
+
+/* Creating the basic outline of the document and organising it using flexbox */
+ body {
+    display: flex;
+ }
+
 .main-section {
-    background-color: black;
+    background-color: #EABDA8;
     width: 70vw;
-    height: 40vh;
+    height: 100vh;
 }
 
 .banner-section {
-    /* background: image("assets/large_background_vertical_banner.avif"); */
-    background-color: red;
-    width: 29vw;
-    height: 40vh;
+    background: url("assets/banner_bg.avif");
+    width: 30vw;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
