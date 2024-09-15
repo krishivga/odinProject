@@ -113,7 +113,7 @@ em {
 .hero-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .hero-text {
@@ -137,17 +137,18 @@ em {
 }
 
 /* Imported set of styles */
-input[type=text] {
+input[type=text], input[type=email], input[type=number], input[type=password] {
     padding: 0;
-    width: 200px;
-    height: 30px;
+    width: 250px;
+    height: 50px;
     position: relative;
     left: 0;
     outline: none;
     border: 1px solid #cdcdcd;
     border-color: rgba(0, 0, 0, .15);
     background-color: white;
-    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.6rem;
     border-radius: 3px;
   }
 
@@ -163,6 +164,8 @@ input[type=text] {
 }
 
 .form-label {
-    font-size: 1.5rem;
-    color: var(--highlight)
+    width: 250px;
+    font-size: 2rem;
+    color: var(--highlight);
+    text-align: left;
 }
