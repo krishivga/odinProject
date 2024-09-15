@@ -100,7 +100,7 @@ em {
 .form-container {
     width: 90%;
     height: 45%;
-    background-color: var(--alt-bg);
+    background-color: var(--main-bg);
 }
 
 .submit-container {
@@ -127,14 +127,19 @@ em {
 }
 
 /* For form-container */
-.form-container {
+.main-form{
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
 }
 
 /* Imported set of styles */
 input[type=text] {
     padding: 0;
+    width: 200px;
     height: 30px;
     position: relative;
     left: 0;
@@ -143,10 +148,21 @@ input[type=text] {
     border-color: rgba(0, 0, 0, .15);
     background-color: white;
     font-size: 16px;
+    border-radius: 3px;
   }
 
 .form-item {
-    width: 170px;
-    height: 50px;
-    background-color: black;
+    width: 50%;
+    height: 25%;
+    background-color: var(--main-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.form-label {
+    font-size: 1.5rem;
+    color: var(--highlight)
 }
