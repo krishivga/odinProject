@@ -46,3 +46,34 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+/* My code starts here */
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-container {
+    width: 800px;
+    height: 640px;
+    background-color: black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* CSS Grid */
+.main-container {
+    display: grid;
+    grid-template: 80px 80px 400px 80px/200px 600px;
+}
+
+.header {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: red;
+}
