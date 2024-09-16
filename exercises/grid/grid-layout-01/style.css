@@ -59,21 +59,58 @@ body {
 .main-container {
     width: 800px;
     height: 640px;
-    background-color: black;
     margin-left: auto;
     margin-right: auto;
+    padding: 50px;
 }
 
 /* CSS Grid */
 .main-container {
     display: grid;
     grid-template: 80px 80px 400px 80px/200px 600px;
+    gap: 15px;
+}
+
+.grid-item {
+    border-radius: 10px;
 }
 
 .header {
+    background-color: red;
     grid-row-start: 1;
     grid-row-end: 2;
     grid-column-start: 1;
     grid-column-end: 3;
-    background-color: red;
+}
+
+.sidebar {
+    background-color: blue;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.nav {
+    background: gray;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.article {
+    background: purple;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.footer {
+    background: yellow;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
