@@ -152,7 +152,7 @@ body {
     grid-column: 2/3;
 }
 
-.news-container {
+.trades-container {
     background-color: sienna;
     grid-row: 2/3;
     grid-column: 2/3;
@@ -236,5 +236,51 @@ body {
 /* Card styling */
 
 /* Announcements styling */
+.announcents-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 25px;
+}
 
-/* News styling */
+.announcements-title {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.announcements {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: .4fr 3fr .4fr;
+    height: 80%;
+    width: 90%;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.announcement-card {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    grid-column: 2/3;
+    border-top: 1px solid black;
+}
+
+.announcement-card:first-of-type {
+    border: none;
+}
+
+.announcement-title {
+    color: black;
+    font-size: 1.6rem;
+}
+
+.announcement-content {
+    color: black;
+    font-size: 1.1rem;
+}
+
+/* trades styling */
